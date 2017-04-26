@@ -16,14 +16,14 @@ namespace V.R.Gr8.API.Controllers
         }
 
         // GET: api/Image/5
-        public string Get(int id)
+        public HttpResponseMessage Get(int id)
         {
-            return "value";
+            return Request.CreateResponse(HttpStatusCode.NotFound);
         }
 
         // POST: api/Image
-        public HttpResponseMessage Get(int id) {
-            return Request.CreateResponse(HttpStatusCode.NotFound);
+        public void Post([FromBody]string value)
+        {
         }
 
         // PUT: api/Image/5

@@ -14,7 +14,7 @@ namespace V.R.Gr8.API.Tests.Controllers {
         [TestMethod]
         public void Get() {
             // Arrange
-            ValuesController controller = new ValuesController();
+            ImageController controller = new ImageController();
 
             // Act
             IEnumerable<string> result = controller.Get();
@@ -29,10 +29,10 @@ namespace V.R.Gr8.API.Tests.Controllers {
         [TestMethod]
         public void GetById() {
             // Arrange
-            ValuesController controller = new ValuesController();
+            ImageController controller = new ImageController();
 
             // Act
-            string result = controller.Get(5);
+            HttpResponseMessage result = controller.Get(5);
 
             // Assert
             Assert.AreEqual("value", result);
@@ -41,7 +41,7 @@ namespace V.R.Gr8.API.Tests.Controllers {
         [TestMethod]
         public void Post() {
             // Arrange
-            ValuesController controller = new ValuesController();
+            ImageController controller = new ImageController();
 
             // Act
             controller.Post("value");
@@ -52,7 +52,7 @@ namespace V.R.Gr8.API.Tests.Controllers {
         [TestMethod]
         public void Put() {
             // Arrange
-            ValuesController controller = new ValuesController();
+            ImageController controller = new ImageController();
 
             // Act
             controller.Put(5, "value");
@@ -63,7 +63,7 @@ namespace V.R.Gr8.API.Tests.Controllers {
         [TestMethod]
         public void Delete() {
             // Arrange
-            ValuesController controller = new ValuesController();
+            ImageController controller = new ImageController();
 
             // Act
             controller.Delete(5);
