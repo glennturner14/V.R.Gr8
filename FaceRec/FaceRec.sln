@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "V.R.Gr8", "V.R.Gr8\V.R.Gr8.csproj", "{19E9E573-CE63-4178-8D6D-3A0E889F1736}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceRec", "..\FaceRec\FaceRec\FaceRec.csproj", "{39CB2FE4-1833-4545-99B5-1C66F60EC858}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceRec", "FaceRec\FaceRec.csproj", "{39CB2FE4-1833-4545-99B5-1C66F60EC858}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,12 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{19E9E573-CE63-4178-8D6D-3A0E889F1736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19E9E573-CE63-4178-8D6D-3A0E889F1736}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19E9E573-CE63-4178-8D6D-3A0E889F1736}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{19E9E573-CE63-4178-8D6D-3A0E889F1736}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19E9E573-CE63-4178-8D6D-3A0E889F1736}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19E9E573-CE63-4178-8D6D-3A0E889F1736}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{39CB2FE4-1833-4545-99B5-1C66F60EC858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{39CB2FE4-1833-4545-99B5-1C66F60EC858}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39CB2FE4-1833-4545-99B5-1C66F60EC858}.Release|Any CPU.ActiveCfg = Release|Any CPU
