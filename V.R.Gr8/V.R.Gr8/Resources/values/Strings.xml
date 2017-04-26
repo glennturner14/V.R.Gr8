@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">V.R.Gr8</string>
+  <string name="openCamera">Open Camera</string>
 </resources>
