@@ -18,7 +18,7 @@ namespace V.R.Gr8.API.Controllers
         // GET: api/Image/5
         public HttpResponseMessage Get(int id)
         {
-            return Request.CreateResponse(HttpStatusCode.NotFound);
+            return Request.CreateResponse(HttpStatusCode.OK, "hello");
         }
 
         // POST: api/Image
