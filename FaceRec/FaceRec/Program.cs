@@ -19,14 +19,22 @@ namespace CSHttpClientSample
         static void Main()
         {
             Console.Write("Starting...");
-            string imageFilePath = @"E:\Users\nawaf.baraya\Downloads\IMG-20170423-WA0007.jpg";
+           
             string json = "{\"name\":\"My Clients\", \"userData\":\"Client Lists.\"}";
             string json2 = "{\"name\":\"My Employees\", \"userData\":\"Employees Lists.\"}";
             //createPersonGroup(ClientGroupId, json);
             //createPersonGroup(EmployeeGroupId, json2);
            
-            //string id = CreatPerson(ClientGroupId, "Nawaf Baraya", "VIP Client").Result;
-            AddFace(ClientGroupId, id);
+            string id = CreatPerson(ClientGroupId, "Nawaf Baraya", "VIP Client").Result;
+            string[] imageList = new string[] {
+                @"E:\Users\nawaf.baraya\Downloads\2017-03-29 13.23.36.jpg",
+                @"E:\Users\nawaf.baraya\Downloads\2017-03-29 15.13.17.jpg",
+                @"E:\Users\nawaf.baraya\Downloads\2017-04-03 22.50.46.jpg",
+                @"E:\Users\nawaf.baraya\Downloads\IMG_20161028_150357.jpg" };
+
+            foreach (var image in imageList) {
+                AddFace(ClientGroupId, id, image);
+            }
 
             string returnList = MakeDetectRequest(@"E:\Users\nawaf.baraya\Downloads\2017-04-03 22.50.46.jpg").Result;
 
@@ -134,7 +142,7 @@ namespace CSHttpClientSample
         //306944be-0b8e-4e37-ad3e-75a478a6d434 tony
         // 0eba6194-6db4-4525-9bdd-3310de4b6bf0 nawaf
 
-        static async void AddFace(string id, string PersionId)
+        static async void AddFace(string id, string PersionId,string filename)
         {
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
@@ -146,7 +154,7 @@ namespace CSHttpClientSample
 
             HttpResponseMessage response;
             // Request body. Try this sample with a locally stored JPEG image.
-            byte[] byteData = GetImageAsByteArray(@"E:\Users\nawaf.baraya\Downloads\2017-04-03 22.50.46.jpg");
+            byte[] byteData = GetImageAsByteArray(filename);
 
            string responseContent;
             using (var content = new ByteArrayContent(byteData))
