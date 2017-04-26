@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using System.Net.Http;
 
 namespace VRGR8.Controllers
 {
@@ -17,10 +18,14 @@ namespace VRGR8.Controllers
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
+        //[HttpGet("{id}")]
+        //public string Get(int id)
+        //{
+            //return "value";
+        //}
+
+        public HttpResponseMessage Get(int id) {
+            return Request.CreateResponse(HttpStatusCode.NotFound);
         }
 
         // POST api/values
