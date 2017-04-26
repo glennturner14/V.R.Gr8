@@ -38,16 +38,16 @@ namespace V.R.Gr8.API.Tests.Controllers {
             Assert.AreEqual("value", result);
         }
 
-        [TestMethod]
-        public void Post() {
-            // Arrange
-            ImageController controller = new ImageController();
+        //[TestMethod]
+        //public void Post() {
+        //    // Arrange
+        //    ImageController controller = new ImageController();
 
-            // Act
-            controller.Post("value");
+        //    // Act
+        //    controller.Post("value");
 
-            // Assert
-        }
+        //    // Assert
+        //}
 
         [TestMethod]
         public void Put() {
