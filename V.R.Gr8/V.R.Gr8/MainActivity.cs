@@ -8,6 +8,9 @@ using Java.IO;
 using Android.Content.PM;
 using Android.Net;
 using Android.Provider;
+using V.R.Gr8.Classes;
+using static Android.Print.PrintAttributes;
+using System.Net.Http;
 
 namespace V.R.Gr8
 {
@@ -47,13 +50,24 @@ namespace V.R.Gr8
             App.bitmap = App._file.Path.LoadAndResizeBitmap(width, height);
             if (App.bitmap != null) {
                 _imageView.SetImageBitmap(App.bitmap);
+                byte[] bitmapData;
+                using (var stream = new System.IO.MemoryStream()) {
+                    App.bitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                    bitmapData = stream.ToArray();
+                }
+                //var myTask = ImageUpload.UploadUserPictureApiCommand(bitmapData);
+                ImageUpload.PostItem(bitmapData);
+
                 App.bitmap = null;
             }
 
+
+            //UploadUserPictureApiCommand()
             // Dispose of the Java side bitmap.
             System.GC.Collect();
         }
 
+        
         private void CreateDirectoryForPictures() {
             App._dir = new File(
                 Environment.GetExternalStoragePublicDirectory(
@@ -74,7 +88,7 @@ namespace V.R.Gr8
             Intent intent = new Intent(MediaStore.ActionImageCapture);
             App._file = new File(App._dir, System.String.Format("myPhoto_{0}.jpg", System.Guid.NewGuid()));
             intent.PutExtra(MediaStore.ExtraOutput, Uri.FromFile(App._file));
-            StartActivityForResult(intent, 0);
+            StartActivityForResult(intent, 100);
         }
     }
 

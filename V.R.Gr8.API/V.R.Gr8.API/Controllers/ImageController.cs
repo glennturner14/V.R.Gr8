@@ -23,23 +23,22 @@ namespace V.R.Gr8.API.Controllers
         }
 
         // GET: api/Image/5
-        //public HttpResponseMessage Get(int id)
-        //{
-        //    return Request.CreateResponse(HttpStatusCode.OK, "hello");
-        //}
-
         public HttpResponseMessage Get(int id) {
-            var result = new HttpResponseMessage(HttpStatusCode.OK);
-            String filePath = HostingEnvironment.MapPath("~/Images/HT.jpg");
-            FileStream fileStream = new FileStream(filePath, FileMode.Open);
-            Image image = Image.FromStream(fileStream);
-            MemoryStream memoryStream = new MemoryStream();
-            image.Save(memoryStream, ImageFormat.Jpeg);
-            result.Content = new ByteArrayContent(memoryStream.ToArray());
-            result.Content.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
-
-            return result;
+            return Request.CreateResponse(HttpStatusCode.OK, "hello");
         }
+
+        //public HttpResponseMessage Get(int id) {
+        //    var result = new HttpResponseMessage(HttpStatusCode.OK);
+        //    String filePath = HostingEnvironment.MapPath("~/Images/HT.jpg");
+        //    FileStream fileStream = new FileStream(filePath, FileMode.Open);
+        //    Image image = Image.FromStream(fileStream);
+        //    MemoryStream memoryStream = new MemoryStream();
+        //    image.Save(memoryStream, ImageFormat.Jpeg);
+        //    result.Content = new ByteArrayContent(memoryStream.ToArray());
+        //    result.Content.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
+
+        //    return result;
+        //}
 
         // POST: api/Image
         public HttpResponseMessage Post() {
